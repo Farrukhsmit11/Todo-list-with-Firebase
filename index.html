@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+</head>
+
+<body>
+
+    <div class="todo-container">
+        <div class="container">
+            <div class="row">
+                <div class="todo-app-box">
+                    <div class="todo-header">
+                        <h1><span class="highlight">To-Do-</span>List</h1>
+                        <img class="todo-icon" src="assests/Images/icon.png" />
+                    </div>
+
+                    <div id="list-Container">
+                        <form id="todo-form" onsubmit="event.preventDefault()">
+                            <label>
+                                <input id="num1" class="titleinput" type="text" placeholder="Enter task Title" />
+                                <textarea id="num2" class="Description-input" placeholder=" Enter Task Description"></textarea>
+                                <button id="add-btn" onclick="addTask();" type="button" class="todo-button">Add
+                                    Task</button>
+                        </form>
+                        </label>
+
+                        <ul id="task-list"></ul>
+                    </div>
+
+
+
+                    <div class="task-list">
+                        <ul id="tasklist">
+                            <li class="list-item">
+                                <div class="list-content">
+                                    <div class="list-item-title">
+                                        <h2>Title</h2>
+                                    </div>
+                                    <div class="list-item-description">
+                                        <h2>Description</h2>
+                                    </div>
+                                    <div class="action">
+                                        <h2>Action</h2>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+
+
+
+    <script src="./firebase.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
