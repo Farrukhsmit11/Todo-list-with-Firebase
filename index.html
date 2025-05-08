@@ -29,18 +29,19 @@
                     </div>
 
                     <div id="list-Container">
-                        <form id="todo-form" onsubmit="event.preventDefault()">
+                        <form id="todo-form">
                             <label>
-                                <input id="num1" class="titleinput" type="text" placeholder="Enter task Title" />
-                                <textarea id="num2" class="Description-input" placeholder=" Enter Task Description"></textarea>
-                                <button id="add-btn" onclick="addTask();" type="button" class="todo-button">Add
+                                <input id="num1" class="titleinput" type="text" placeholder="Enter task Title"
+                                    required />
+                                <textarea id="num2" class="Description-input" placeholder=" Enter Task Description"
+                                    required></textarea>
+                                <button id="add-btn" type="button" class="todo-button">Add
                                     Task</button>
                         </form>
                         </label>
 
                         <ul id="task-list"></ul>
                     </div>
-
 
 
                     <div class="task-list">
@@ -65,15 +66,10 @@
         </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
 
 
-
-
-    <script src="./firebase.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="app.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="app.js"></script>
 
 </body>
 
