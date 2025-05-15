@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(135deg, #153677, #4e085f);
+    background: linear-gradient(139deg, #153677, #4e085f);
 }
 
 
@@ -11,6 +11,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     min-height: 533px;
+    display: flex;
+    justify-content: center;
 }
 
 .todo-app-box {
@@ -37,7 +39,8 @@ body {
     font-family: Poppins;
     font-weight: 600;
     font-size: 16px;
-    background-color: #f5f5f5;
+    background-color: azure;
+    border: 1px solid antiquewhite;;
 }
 
 
@@ -49,7 +52,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: black;
-    background-color: #f5f5f5;
+    background-color: azure;
     border-radius: 5px;
     border: 1px solid #ddd;
     outline: none;
@@ -62,14 +65,18 @@ body {
 .todo-button {
     margin: 14px 0;
     padding: 14px;
-    background: blue;
+    background: #b52929;
     color: white;
-    border-radius: 12px;
+    border-radius: 7px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     width: 100%;
     font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 }
 
@@ -96,13 +103,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-}
-
-.list-item-actions {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -154,11 +154,6 @@ body {
     color: #b52929;
 }
 
-/* .tasklist {
-    font-family: Poppins;
-    
-} */
-
 h2 {
     font-weight: bold;
 }
@@ -192,8 +187,6 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 10px; */
-    /* margin: 5px 0; */
     border-radius: 5px;
     font-family: Poppins;
     font-weight: 600;
@@ -209,41 +202,18 @@ li {
     justify-content: flex-end;
 }
 
-.edit-button,
-.delete-button {
-    cursor: pointer;
-    font-size: 18px;
-    color: #333;
-}
 
-
-
-/* .action {
-    /* display: flex;
-    gap: 0.75erm;
-    font-size: 1.2rem;
-    cursor: pointer;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-} */
 
 .list-item-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 17px; */
     margin: 10px 0;
-    /* border-radius: 8px; */
-
 }
 
 .list-item-content {
     flex: 1;
     text-align: left;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* gap: 16px; */
 }
 
 .list-item-content h2 {
@@ -261,16 +231,31 @@ li {
 
 .action {
     display: flex;
-    gap: 17px;
+    gap: 19px;
+    align-items: center;
+    justify-content: center;
 
 }
 
-.action i {
-    font-size: 18px;
+.delete-button {
+    color: #b52929;
+    font-size: 19px;
     cursor: pointer;
-    color: #333;
+}
+
+.edit-button {
+    color: #30c730;;
+    font-size: 19px;
+    cursor: pointer;
 }
 
 #tasklist {
     padding: 12px 2px;
+}
+
+hr {
+    width: 100%;
+    background-color: #b52929;
+    padding-left: 64px;
+    padding-right: 5px;
 }

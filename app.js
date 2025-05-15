@@ -7,7 +7,7 @@ async function rendertasks() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let isEditing = false;
+  let isEditing = false; 
   let editingTaskId = null;
 
   rendertasks();
@@ -26,8 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Add method Firebase db
-    // app is in editing whether editingtask is avilable 
+    // Add method Firebase db    
     if (isEditing && editingTaskId) {
       const taskRef = doc(db, "tasks", editingTaskId);
       try {
@@ -36,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
           description,
           updatedAt: new Date(),
         });
-        isEditing = false; 
+        isEditing = false;
         editingTaskId = null;
         addBtn.textContent = "Add Task";
         console.log("Task updated successfully");
@@ -50,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
           description,
           createdAt: serverTimestamp(),
         });
-        // console.log("run");
         console.log("Task added successfully to Firestore");
       } catch (error) {
         console.error("Error adding task:", error);
@@ -63,24 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const newElement = document.createElement("li");
     newElement.innerHTML = `
-   <div class="list-item-container"></div>
+
+
+   <div class="list-item-container">
             <div class="list-item-content">
             <h2>${title}</h2>
              <p>${description}</p>
-            
-            </div>
-            <div class="action">
-                <span class="edit-button" data-id="${editingTaskId}">
-                <i class="fa-solid fa-pen-to-square"></i>
-                </span>
-                <span class="delete-button" data-id="${editingTaskId}">
-                <i class="fa-solid fa-trash"></i>
-                </span>
-            </div>
-                
+              </div>
+              <div class="action">
+              <h1>Action</h1>
+              <span class="edit-button" data-id="${editingTaskId}"> <i class="fa-solid fa-pen-to-square"></i></span>
+              <span class="delete-button" data-id="${editingTaskId}">
+              <i class="fa-solid fa-trash"></i>
+              </span>
+              </div>                
+              </div>
             `;
 
-    // tasklist.appendChild(newElement);
 
     titleInput.value = "";
     descInput.value = "";
@@ -92,11 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-
   async function rendertasks() {
     const tasklist = document.getElementById("tasklist");
     tasklist.innerHTML = "";
-    
+
 
     // Get Method Firebase
     const querySnapshot = await getDocs(collection(db, "tasks"));
@@ -111,8 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div class="list-item-container"></div>
             <div class="list-item-content">
+
             <h2>${title}</h2>
             <p>${description}</p>
+            <div class ="footer-line">
+            <hr>
+            </div>
             </div>
             <div class="action">
                 <span class="edit-button" data-id="${taskId}"><i class="fa-solid fa-pen-to-square"></i></span>
@@ -120,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
       
             `;
-
 
 
       // Delete Method 
@@ -154,45 +153,3 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
 });
-
-
-
-
-
-
-
-
-
-
-// const editButton = newElement.querySelector(".edit-button");
-// editButton.addEventListener("click", async () => {
-//   const titleInput = document.getElementById("num1");
-//   const descInput = document.getElementById("num2");
-
-//   titleInput.value = title;
-//   descInput.value = description
-
-//   isEditing = true;
-//   editingTaskId = taskId
-//   // const editingtaskId = docSnap.id
-//   // const taskRef = doc(db, "tasks", taskId)
-
-//   // const updateTask = {
-//   //   title: titleInput.value,
-//   //   description: descInput.value
-//   // }
-//   console.log(title, description, "QWQWRWER")
-//   // await updateDoc(taskRef, updateTask)
-//   //   .then(() => {
-//   //     console.log("Task updated successfully")
-//   //   })
-//   //   .catch((error) => {
-//   //     console.error("Error updating task:", error)
-//   //   })
-
-//   titleInput.value = title;
-//   descInput.value = description;
-
-
-//   addBtn.textContent = "Update task"
-// })
